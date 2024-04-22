@@ -27,22 +27,46 @@
             {
                 $stmt->bind_result($hashed_password);
                 $stmt->fetch();
-            if(password_verify($u_password, $hashed_password))
-            {
-                echo "Autenticazione riuscita";
-                header("Location: ../html/home.html");
+                if(password_verify($u_password, $hashed_password))
+                {
+                    echo "Autenticazione riuscita";
+                    header("Location: ../html/home.html");
+                }
+                else
+                {
+                    echo "Dati inseriti errati. Riprova";
+                    header("Location: ../html/login.html");
+                }
             }
-            else
+        }
+        if($u_email=='admin@gmail.com')
+        {
+            $stmt = $conn->prepare("SELECT pass FROM utente WHERE email='$u_email'");
+            $stmt->execute();
+            $stmt->store_result();
+
+            if ($stmt->num_rows == 1) 
             {
-                echo "Dati inseriti errati. Riprova";
-                header("Location: ../html/login.html");
+                $stmt->bind_result($hashed_password);
+                $stmt->fetch();
+                if(password_verify($u_password, $hashed_password))
+                {
+                    echo "Autenticazione riuscita";
+                    header("Location: ../html/admin.html");
+                }
+                else
+                {
+                    echo "Dati inseriti errati. Riprova";
+                    header("Location: ../html/login.html");
+                }
             }
         }
         else
         {
             echo "Complete tutti i campi";
         }
-        }
+
+        
     } 
     $conn->close();
 ?>
