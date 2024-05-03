@@ -72,9 +72,10 @@
 
                 <button class="submit" type="submit" id="submitMODIFICA"> Submit </button>
 
-                <h1 class="aggiungi"> Aggiugni </h1>
+                <h1 class="aggiungi"> Aggiungi </h1>
 
                 <table class="table">
+                    <form action="../php/admin.php" method="POST">
                     <tr>
                         <th>nome</th>
                         <th>prezzo</th>
@@ -83,16 +84,16 @@
                         <th>quantità disponibile</th>
                     </tr>
                     <tr>
-                        <td> <input type="text" class="nome" id="nomeNEW"> </td>
-                        <td> <input type="number" class="prezzo" id="prezzoNEW"> </td>
-                        <td> <input type="number" class="sconto" id="scontoNEW"> </td>
-                        <td> <input type="text" class="descrizione" id="descrizioneNEW"> </td>
-                        <td> <button class="btn1"> + </button>  <label class="number"> 4 </label> <button class="btn2"> - </button> </td>
+                        <td> <input type="text" class="nome" name="nome"> </td>
+                        <td> <input type="number" class="prezzo" name="prezzo"> </td>
+                        <td> <input type="number" class="sconto" name="sconto"> </td>
+                        <td> <input type="text" class="descrizione" name="descrizione"> </td>
+                        <td> <input type="number" class="quatità" name="quantità"> </td>
+                        <button type="submit" class="submit"> Submit </button>
                     </tr>
+                    
+                    </form>
                 </table>
-
-                <button class="submit" type="submit" id="submitAGGIUNGI"> Submit </button>
-
             </div>
 
         </section>
