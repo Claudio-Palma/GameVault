@@ -38,6 +38,10 @@
                     header("Location: ../html/login.html");
                 }
             }
+            else
+            {
+                echo "Non sei registrato, registrati";
+            }
         }
         if($u_email=='admin@gmail.com')
         {
@@ -61,12 +65,12 @@
                 }
             }
         }
-        else
-        {
-            echo "Complete tutti i campi";
-        }
-
-        
+       
+        //aggiungere codice per password dimenticata
     } 
+    else
+    {
+        echo "Complete tutti i campi";
+    }
     $conn->close();
 ?>

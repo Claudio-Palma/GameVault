@@ -20,15 +20,24 @@
 
     if(!empty($u_username)&&!empty($u_email)&&!empty($u_password))
     {
-        $hash_password=password_hash($u_password, PASSWORD_DEFAULT);
-       
-        $IDRandom=rand(1,100000);
-        $inserimento="INSERT INTO utente(IdUtente, NickName, email, pass) VALUES ('$IDRandom','$u_username','$u_email','$hash_password')";
-        if ($conn->query($inserimento) === TRUE) {
-            echo "Registrazione completata con successo!";
-            header("Location: ../html/home.html");
-        } else {
-            echo "Errore durante la registrazione: " . $conn->error;
+        $verifica="SELECT * FROM utente WHERE email='$u_email'";
+        $risultato=$conn->query($verifica);
+        if($risultato->num_rows > 0)
+        {
+            echo "Utente già registrato, effettua il login" . $conn->error;
+            header("Location: ../html/login.html");
+        }
+        else
+        {
+            $hash_password=password_hash($u_password, PASSWORD_DEFAULT);
+            $IDRandom=rand(1,100000);
+            $inserimento="INSERT INTO utente(IdUtente, NickName, email, pass) VALUES ('$IDRandom','$u_username','$u_email','$hash_password')";
+            if ($conn->query($inserimento) === TRUE) {
+                echo "Registrazione completata con successo!";
+                header("Location: ../html/home.html");
+            } else {
+                echo "Errore durante la registrazione: " . $conn->error;
+            }   
         }
     }
     else
