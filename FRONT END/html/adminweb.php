@@ -68,6 +68,7 @@
                                         <td>" .$row["prezzo"]."</td>
                                         <td>" .$row["sconto"]."</td>
                                         <td>" .$row["disponibilita"]."</td>
+                                        <td> <button class="submit"> X </button> </td>
                                 </tr>";
                             }
                         }
