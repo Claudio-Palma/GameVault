@@ -48,11 +48,30 @@
                 {
                     echo "Gioco modificato con successo!";
                     header("Location: ../html/adminweb.php");
-                } 
+                }
+                else
+                {
+                    echo "Il gioco non esiste";
+                }
             }
             else
             {
                 echo "Completa tutti i campi";
+            }
+        }
+        else if(isset($_POST['elimina']))
+        {
+            $Id=$_POST["id"];
+            if(!empty($Id))
+            {
+                $elimina="DELETE FROM game WHERE IdGame=$Id";
+                if($conn->query($elimina)===TRUE)
+                {
+                    echo "Gioco cancellato";
+                    header("Location: ../html/adminweb.php");
+                }
+                else
+                echo "Il gioco non esiste";
             }
         }
     }
