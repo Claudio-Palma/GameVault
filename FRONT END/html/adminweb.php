@@ -68,7 +68,6 @@
                                         <td>" .$row["prezzo"]."</td>
                                         <td>" .$row["sconto"]."</td>
                                         <td>" .$row["disponibilita"]."</td>
-                                        <td> <button class="submit"> X </button> </td>
                                 </tr>";
                             }
                         }
@@ -85,10 +84,10 @@
                         <th>quantita' disponibile</th>
                     </tr>
                     <tr>
-                        <td> <input type="number" class="id" name="id"> </td>
-                        <td> <input type="number" class="prezzo" name="prezzo"> </td>
-                        <td> <input type="number" class="sconto" name="sconto"> </td>
-                        <td> <input type="number" class="quatità" name="quantità"> </td>
+                        <td> <input placeholder="id per la modifica" type="number" class="id" name="id"> </td>
+                        <td> <input placeholder="nuovo prezzo" type="number" class="prezzo" name="prezzo"> </td>
+                        <td> <input placeholder="nuovo sconto" type="number" class="sconto" name="sconto"> </td>
+                        <td> <input placeholder="nuova quantità" type="number" class="quatità" name="quantità"> </td>
                     </tr>
                 </table>
 
@@ -101,19 +100,33 @@
                             <th>nome</th>
                             <th>prezzo</th>
                             <th>sconto</th>
-                            <th>descrizione</th>
                             <th>quantita' disponibile</th>
                         </tr>
                         <tr>
-                            <td> <input type="text" class="nome" name="nome"> </td>
-                            <td> <input type="number" class="prezzo" name="prezzo"> </td>
-                            <td> <input type="number" class="sconto" name="sconto"> </td>
+                            <td> <input placeholder="nome" type="text" class="nome" name="nome"> </td>
+                            <td> <input placeholder="prezzo" type="number" class="prezzo" name="prezzo"> </td>
+                            <td> <input placeholder="sconto" type="number" class="sconto" name="sconto"> </td>
+                            <td> <input placeholder="quantità" type="number" class="quatità" name="quantità"> </td>
+                        </tr>
+                    </table>
+                        <table class="table">
+                        <tr>
+                            <th>Descrizione</th>
+                        </tr>    
+                        <tr>
                             <td> <textarea class="descrizione" name="descrizione"> </textarea> </td>
-                            <td> <input type="number" class="quatità" name="quantità"> </td>
                         </tr>
                     </table>
                     <button type="submit" class="submit" name="inserimento"> Submit </button>
                 </form>
+
+                <form action="../php/admin.php" method="POST">
+
+                <h1 class="del"> Elimina </h1>
+                <input placeholder="Insericsi l'id" type="number" class="idDel" name="id">
+                <button class="submit" type="submit" name="elimina"> Submit </button>
+
+             </form>
             </div>
 
         </section>
