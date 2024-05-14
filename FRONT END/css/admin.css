@@ -107,7 +107,6 @@ header{
 
 .aggiungi{
     margin-top: 150px;
-    margin-bottom: 50px;
 }
 
 .lista{
@@ -127,7 +126,7 @@ header{
 .table{
     text-align: center;
     color: #ffffff;
-    margin-left: 13%;
+    margin-left: 25%;
 }
 
 .btn1{
@@ -149,11 +148,25 @@ header{
     font-weight: bold;
     border-radius: 5px;
     border: none;
+    margin-left: 47.3%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.idDel{
+    margin-left: 42.8%;
+    height: 30px;
+    text-align: center;
+    font-size: 1.1em;
+}
+
+.del{
+    margin-bottom: 15px;
 }
 
 .descrizione{
-    width: 300px;
-    height: 100px;
+    width: 700px;
+    height: 150px;
 }
 
 /* DROPDOWN */
@@ -249,4 +262,8 @@ header{
 
 .clearfix {
     clear: both;
+}
+.header-row th
+{
+    padding: 10px;
 }
