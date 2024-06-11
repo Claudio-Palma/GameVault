@@ -13,6 +13,7 @@
     {
         if(isset($_POST['inserimento']))
         {
+            //variabili del prodotto
             $nome=$_POST["nome"];
             $prezzo=$_POST["prezzo"];
             $sconto=$_POST["sconto"];
