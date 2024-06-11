@@ -15,6 +15,7 @@
 
     if($_SERVER["REQUEST_METHOD"]=="POST")
     {
+         //variabili del prodotto
         $u_email=$_POST["e-mail"];
         $u_password=$_POST["pswd"];
         if(!empty($u_email)&&!empty($u_password))
