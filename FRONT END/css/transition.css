@@ -18,12 +18,13 @@ body {
 /*form general*/
 
 .form {
-	margin: 40px auto;
+	margin: 200px auto;
 	padding: 10px 30px 35px;
 	display: block;
 	width: 375px;
 	background-color: #DEDCDC;
 	box-shadow: 0 0 25px 0 #000;
+	border-radius: 10px;
 }
 
 .form h2 {
