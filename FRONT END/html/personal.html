@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Personal Dashboard</title>
+        <link rel="stylesheet" type="text/css" href="../css/personal.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+            integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+
+    <body>
+
+        <header>
+            <div class="navbar">
+                <div class="logo"> <a href="#">Game Vault</a> </div>
+                <ul class="links">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="catalogo.html">Servicies</a></li>
+                    <li><a href="mail.html">Contact</a></li>
+                </ul>
+                <a href="#" class="action-btn" style="margin-left: 550px;"><i class="fa-solid fa-user"></i></a>
+                <a href="#" class="action-btn"> <i class="fa-solid fa-cart-shopping"></i> </a>
+                <div class="toggle-btn">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+            <div class="dropdown-menu open">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="catalogo.html">Servicies</a></li>
+                <li><a href="mail.html">Contact</a></li>
+                <li><a href="#" class="action-btn">Get Started</a></li>
+            </div>
+        </header>
+
+        <h1> Welcome to your personal area of Game Vault </h1>
+
+        <h4> here you can find your order history, from first to last. Thank you for choosing Game Vault to make your purchases </h4>
+
+        <table class="elenco">
+            <tr>
+                <th>Name</th>
+                <th>Platfor</th>
+                <th>Price</th>
+                <th>Discount</th>
+                <th>Redemption Code</th>
+                <th>Purchases Date</th>
+            </tr>
+            <tr>
+                <td>Riga 1, Cella 1</td>
+                <td>Riga 1, Cella 2</td>
+                <td>Riga 1, Cella 3</td>
+                <td>Riga 1, Cella 4</td>
+                <td>Riga 1, Cella 5</td>
+                <td>Riga 1, Cella 6</td>
+            </tr>
+        </table>
+
+        <h1> Reset credentials </h1>
+
+        <table class="credenziuali">
+            <tr>
+                <th>UserName</th>
+                <th>Password</th>
+                <th>E-mail</th>
+            </tr>
+            <tr>
+                <td> <input type="text" placeholder="New UserName"> </td>
+                <td> <input type="password" placeholder="New Password"> </td>
+                <td> <input type="email" placeholder="New E-mail"> </td>
+            </tr>
+        </table>
+
+        <input type="password" placeholder="Confirm Password" style="margin-left: 43.5%;">
+
+        <button class="button"> Submit </button>
+
+    </body>
+
+</html>
