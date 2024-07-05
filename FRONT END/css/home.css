@@ -38,12 +38,15 @@ header{
     padding: 0 2rem;
 }
 
+.header1{
+    background-color: #090621;
+}
+
 .section1{
     height: 90vh;
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    background-image: url('../foto/prova.gif') ;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -64,7 +67,7 @@ header{
 .line{
     width: 150px;
     height: 4px;
-    background: #fc036b;
+    background: #FE9658;
     margin: 10px auto;
     border-radius: 5px;
 }
@@ -77,7 +80,7 @@ header{
 
 .ctn{
     padding: 8px 15px;
-    background: #fc036b;
+    background: #FE9658;
     border-radius: 30px;
     color: whitesmoke;
 }
@@ -110,7 +113,7 @@ header{
 }
 
 .action-btn{
-    background-color: orange;
+    background-color: #FE9658;
     color: white;
     padding: 0.5rem 1rem;
     border: none;
@@ -226,6 +229,11 @@ p{
 }
 
 /*Slider*/
+
+.game-section{
+    background-color: #090621;
+    width: 100%;
+}
 
 .item{
     float: left;
@@ -404,26 +412,46 @@ button {
 
 .prima{
     float: right;
-    margin-bottom: 20px;
+    margin-top: 25px;
+    margin-left: 10px;
 }
 
 .seconda{
     float: left;
-    margin-bottom: 15px;
+    margin-top: 25px;
+    margin-right: 20px;
 }
 
 .terza{
     float: right;
-    margin-bottom: 15px;
+    margin-top: 25px;
+    margin-left: 10px;
+    height: 300px;
+    width: 550px;
 }
 
 .text{
     font-size: 1.3em;
-    text-align: center;
-    padding: 15px;
-    margin-top: 10%;
-
+    text-align: left;
+    padding: 0 15px 15px 15px;
 }
+
+.header2{
+    border: 1px solid #FE9658;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background-color: #212121;
+}
+
+.ctnSeconda{
+    margin-left: 88%;
+}
+
+.txt3{
+    font-size: 1.4em;
+}
+
+/* Portfolio */
 
 :root {
     --level-one: translateZ(3rem);
@@ -445,7 +473,7 @@ button {
     text-align: center;
     position: relative;
     padding: 15em 5em;
-    transition: transform 3s;
+    transition: transform 1.5s;
     background: pink;
     transform-style: preserve-3d;
 }
@@ -525,69 +553,29 @@ button {
 
 /* Footer */
 
-.footerContainer {
-    margin-top: 30px;
+.FooterContainer{
+    margin-left: 50px;
     width: 100%;
-    margin-bottom: 0;
-    height: 300px;
+    left: -50px;
+    background-color: #212121;
+    margin-top: 1100px;
+    height: 100px;
+    text-align: left;
+    position: relative;
+    padding: 15px;
 }
 
-.footer .col {
-    width: 190px;
-    height: auto;
+.FooterContainer a{
+    letter-spacing: 1px;
+    margin-left: 50px;
     float: left;
-    box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    padding: 0px 20px 20px 20px;
 }
 
-.footer .col h1 {
-    margin: 0;
-    padding: 0;
-    font-family: inherit;
-    font-size: 12px;
-    line-height: 17px;
-    padding: 20px 0px 5px 0px;
-    color: rgba(255, 255, 255, 0.2);
-    font-weight: normal;
-    text-transform: uppercase;
-    letter-spacing: 0.250em;
+.FooterContainer a:hover {
+    color: #FE9658;
 }
 
-.footer .col ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
 
-.footer .col ul li {
-    color: #999999;
-    font-size: 14px;
-    font-family: inherit;
-    font-weight: bold;
-    padding: 5px 0px 5px 0px;
-    cursor: pointer;
-    transition: .2s;
-    -webkit-transition: .2s;
-    -moz-transition: .2s;
-}
-
-.social ul li {
-    display: inline-block;
-    padding-right: 5px !important;
-}
-
-.footer .col ul li:hover {
-    color: #ffffff;
-    transition: .1s;
-    -webkit-transition: .1s;
-    -moz-transition: .1s;
-}
-
-.clearfix {
-    clear: both;
-}
 
 /* RESPONSIVE */
 
@@ -603,6 +591,10 @@ button {
 
     .dropdown-menu{
         display: block;
+    }
+
+    .events{
+        margin-top: 300px;
     }
 }
 
@@ -648,6 +640,16 @@ button {
     }
     .game-section .item-desc {
         transform: translateY(calc(100% - 46px));
+    }
+
+    .FooterContainer{
+        margin-top: 2200px;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .FooterContainer a{
+        margin-top: 15px;
     }
 }
 
@@ -709,7 +711,7 @@ button {
     .game-section .item-desc {
         padding: 0 14px 5px;
         transform: translateY(calc(100% - 42px));
-        }
+    }
 }
 
 @media screen and (max-width: 991px) and (min-width: 768px) {
@@ -770,61 +772,8 @@ button {
         width: 100%;
         padding: 20px;
     }
-}
 
-@media only screen and (min-width: 1280px) {
-    .contain {
-        width: 1200px;
-        margin: 0 auto;
-        height: 200px;
-    }
-    
-    .footer .contain{
-        margin-bottom: 285%;
-    }
-}
-
-@media only screen and (max-width: 1139px) {
-    .contain .social {
-        width: 1000px;
-        display: block;
-    }
-
-    .social h1 {
-        margin: 0px;
-    }
-}
-
-@media only screen and (max-width: 950px) {
-    .footer .col {
-        width: 33%;
-    }
-
-    .footer .col h1 {
-        font-size: 14px;
-    }
-
-    .footer .col ul li {
-        font-size: 13px;
-    }
-}
-
-@media only screen and (max-width: 500px) {
-    .footer .col {
-        width: 50%;
-    }
-
-    .footer .col h1 {
-        font-size: 14px;
-    }
-
-    .footer .col ul li {
-        font-size: 13px;
-    }
-}
-
-@media only screen and (max-width: 340px) {
-    .footer .col {
-        width: 100%;
+    .ctnSeconda{
+        margin-left: 80%;
     }
 }
