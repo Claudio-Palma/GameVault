@@ -1,0 +1,211 @@
+body {
+    height: 100vh;
+    background: linear-gradient(to bottom, #0f0c29, #032b63, #24243e);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+h1{
+    color: #fff;
+    text-align: center;
+    margin-top: 15px;
+}
+
+a{
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:hover{
+    color: #FE9658;
+}
+
+header{
+    background-color: #0f0c29;
+}
+
+h4{
+    color: #fff;
+    text-align: center;
+}
+
+input{
+    border-radius: 5px;
+    border: 1px solid #fff;
+    height: 30px;
+}
+
+/* HEADER */
+
+header {
+    position: relative;
+    padding: 0 2rem;
+}
+
+.section1 {
+    height: 90vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.header-content {
+    margin-bottom: 150px;
+    color: whitesmoke;
+    text-align: center;
+}
+
+.header-content h2 {
+    font-size: 4vmin;
+}
+
+.line {
+    width: 150px;
+    height: 4px;
+    background: #fc036b;
+    margin: 10px auto;
+    border-radius: 5px;
+}
+
+.header-content h1 {
+    font-size: 7vmin;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.ctn {
+    padding: 8px 15px;
+    background: #fc036b;
+    border-radius: 30px;
+    color: whitesmoke;
+}
+
+.navbar {
+    width: 100%;
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .logo a {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.navbar .links {
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar .toggle-btn {
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+.action-btn {
+    background-color: orange;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: scale 0.2 ease;
+}
+
+.action-btn:hover {
+    scale: 1.05;
+    color: white;
+}
+
+.action-btn:active {
+    scale: 0.95;
+}
+
+/* DROPDOWN */
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    width: 300px;
+    height: 0;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown-menu.open {
+    height: 240px;
+}
+
+.dropdown-menu li {
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown-menu .action-btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Tabella storico ordini */
+
+.elenco{
+    color: #fff;
+    font-size: 1.5rem;
+    align-items: center;
+    margin-left: 15%;
+    padding: 10px;
+    border-collapse: separate;
+    border-spacing: 10px;
+}
+
+td{
+    padding: 10px 0;
+    border-bottom: #FE9658 solid 1px;
+}
+
+tr {
+    margin-bottom: 10px;
+}
+
+/* Reset Credenziali */
+
+.credenziuali{
+    color: #fff;
+    font-size: 1.5rem;
+    align-items: center;
+    margin-left: 30%;
+    padding: 10px;
+    border-collapse: separate;
+    border-spacing: 10px;
+}
+
+.button{
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #fff;
+    margin-left: 47%;
+    margin-top: 30px;
+}
+
+.button:hover{
+    background-color: #FE9658;
+    transition: 0.5s;
+}
