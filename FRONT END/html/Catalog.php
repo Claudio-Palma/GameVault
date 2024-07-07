@@ -12,7 +12,7 @@
     <body>
         <header>
             <div class="navbar">
-                <div class="logo" style="margin-right: 20px;"> <a href="#">Game Vaunlt</a> </div>
+                <div class="logo" style="margin-right: 20px;"> <a href="#">Game Vault</a> </div>
                 <ul class="links">
                     <li><a href="home.html">Home</a></li>
                     <li><a href="catalogo.html">Servicies</a></li>
