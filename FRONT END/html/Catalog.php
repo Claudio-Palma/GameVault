@@ -12,21 +12,45 @@
     <body>
         <header>
             <div class="navbar">
-                <div class="logo"> <a href="#">Web dev container</a> </div>
+                <div class="logo" style="margin-right: 20px;"> <a href="#">Game Vaunlt</a> </div>
                 <ul class="links">
-                    <li><a href="home.html">Hmoe</a></li>
-                    <li><a href="home.html#portfolio">About</a></li>
+                    <li><a href="home.html">Home</a></li>
                     <li><a href="catalogo.html">Servicies</a></li>
                     <li><a href="mail.html">Contact</a></li>
                 </ul>
-                <a href="#" class="action-btn">Get Started</a>
+
+                <select id="dropdown">
+                    <option value="Price"> Order by Price </option>
+                    <option value="Name"> Order by Name </option>
+                </select>
+                
+                <select id="dropdown">
+                    <option value="PC"> PC </option>
+                    <option value="PS-5"> PS-5 </option>
+                    <option value="X-box"> X-box </option>
+                </select>
+                
+                <select id="dropdown">
+                    <option value="Action"> Action </option>
+                    <option value="Fighting"> Fighting </option>
+                    <option value="MMO-RPG"> MMO-RPG </option>
+                    <option value="RPG"> RPG </option>
+                    <option value="Strategy"> Strategy </option>
+                    <option value="Shooter"> Shooter </option>
+                    <option value="Adventure"> Adventure </option>
+                    <option value="Souls"> Souls </option>
+                </select>
+
+                <input type="text" class="searchBox" placeholder="Search">
+
+                <a href="#" class="action-btn" style="margin-left: 40px;"><i class="fa-solid fa-user"></i></a>
+                <a href="#" class="action-btn"> <i class="fa-solid fa-cart-shopping"></i> </a>
                 <div class="toggle-btn">
                     <i class="fa-solid fa-bars"></i>
                 </div>
             </div>
             <div class="dropdown-menu open">
-                <li><a href="home.html">Hmoe</a></li>
-                <li><a href="home.html#portfolio">About Us</a></li>
+                <li><a href="home.html">Home</a></li>
                 <li><a href="catalogo.html">Servicies</a></li>
                 <li><a href="mail.html">Contact</a></li>
                 <li><a href="#" class="action-btn">Get Started</a></li>
