@@ -43,14 +43,6 @@ header {
     position: relative;
     padding: 0 2rem;
 }
-
-.section1 {
-    height: 90vh;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-}
-
 .header-content {
     margin-bottom: 150px;
     color: whitesmoke;
@@ -170,10 +162,11 @@ header {
     color: #fff;
     font-size: 1.5rem;
     align-items: center;
-    margin-left: 15%;
+    margin-left: 18%;
     padding: 10px;
     border-collapse: separate;
     border-spacing: 10px;
+    margin-top: 100px;
 }
 
 td{
@@ -185,27 +178,32 @@ tr {
     margin-bottom: 10px;
 }
 
-/* Reset Credenziali */
+/* Pulsanti di navigazione */
 
-.credenziuali{
-    color: #fff;
-    font-size: 1.5rem;
-    align-items: center;
-    margin-left: 30%;
-    padding: 10px;
-    border-collapse: separate;
-    border-spacing: 10px;
+.lock{
+    background-color: orange;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: scale 0.2 ease;
+    margin-left: 40%;
 }
 
-.button{
-    padding: 10px;
-    border-radius: 10px;
-    border: 1px solid #fff;
-    margin-left: 47%;
-    margin-top: 30px;
-}
-
-.button:hover{
-    background-color: #FE9658;
-    transition: 0.5s;
+.key{
+    background-color: orange;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: scale 0.2 ease;
+    margin-left: 5%;
 }
