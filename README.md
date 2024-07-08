@@ -16,11 +16,11 @@ In particolare, gli obiettivi sono i seguenti:
 Questi obiettivi sono stati definiti sulla base di un'analisi del mercato e delle esigenze degli utenti. Si ritiene che, se raggiunti, questi obiettivi consentiranno al sito web di avere successo e di soddisfare le aspettative degli utenti.
 
 ## Struttura Progetto  
-📁 Deliverables: Questa directory contiene la documentazione completa per il progetto;  
-📁 db: Questa directory contiene lo schema del database relazionale;  
-📁 Front-End: Questa cartella contiene tutti i file necessari per l'interfaccia utente del progetto. È organizzata in diverse sottocartelle per facilitare la gestione e lo sviluppo del codice;  
+📁 Deliverables: Questa directory contiene la documentazione completa per il progetto;   
+📁 db: Questa directory contiene lo schema del database relazionale;    
+📁 resources: Questa cartella contiene il logo, ed il logo con sfondo trasparente ;    
+📁 Front-End: Questa cartella contiene tutti i file necessari per l'interfaccia utente del progetto. È organizzata in diverse sottocartelle per facilitare la gestione e lo sviluppo del codice;    
 📁 Back-End: Questa cartella contiene tutti i file necessari per il funzionamento del server, la logica dell'applicazione e la gestione dei dati. È organizzata in diverse sottocartelle per facilitare la gestione e lo sviluppo del codice; 
-📁 resources: Questa cartella contiene il logo, ed il logo con sfondo trasparente ; 
 
 ## Tecnologie Utilizzate 📊
 + Php
