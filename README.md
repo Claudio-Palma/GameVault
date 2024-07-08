@@ -20,6 +20,7 @@ Questi obiettivi sono stati definiti sulla base di un'analisi del mercato e dell
 📁 db: Questa directory contiene lo schema del database relazionale;  
 📁 Front-End: Questa cartella contiene tutti i file necessari per l'interfaccia utente del progetto. È organizzata in diverse sottocartelle per facilitare la gestione e lo sviluppo del codice;  
 📁 Back-End: Questa cartella contiene tutti i file necessari per il funzionamento del server, la logica dell'applicazione e la gestione dei dati. È organizzata in diverse sottocartelle per facilitare la gestione e lo sviluppo del codice; 
+📁 resources: Questa cartella contiene il logo, ed il logo con sfondo trasparente ; 
 
 ## Tecnologie Utilizzate 📊
 + Php
