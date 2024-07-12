@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Open Sans', sans serif;
+    font-family: 'Poppins';
 }
 
 body{
@@ -137,7 +137,7 @@ header{
     color: #fff;
     font-size: 1.1em;
     padding: 5px;
-    margin-left: 30px;
+    margin-left: 5px;
 }
 
 .searchBox::placeholder{
@@ -179,7 +179,7 @@ header{
 }
 
 .dropdown-menu.open{
-    height: 240px;
+    height: 350px;
 }
 
 .dropdown-menu li{
@@ -195,6 +195,12 @@ header{
     justify-content: center;
 }
 
+.container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    margin-top: -200px;
+}
+
 /* Footer */
 
 .FooterContainer {
@@ -202,7 +208,7 @@ header{
     width: 100%;
     left: -50px;
     background-color: #212121;
-    margin-top: 1100px;
+    margin-top: 350px;
     height: 100px;
     text-align: left;
     position: relative;
@@ -223,10 +229,12 @@ header{
 
 #card {
     width: 300px;
-    height: 200px;
+    height: 150px;
     box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2);
-    border-radius: 20px;
-    transition: 0.3s
+    transition: 0.3s;
+    float: left;
+    margin-left: 30px;
+    margin-top: 280px;
 }
 
 #card:hover,
@@ -235,12 +243,11 @@ header{
     box-shadow: 8px 8px 16px 0 rgba(0, 0, 0, 0.2), -8px -8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
-#card img {
-    object-fit: cover;
+#card img { 
     animation: fadeIn 1s;
-    height: 100%;
-    width: 100%;
-    border-radius: 20px 20px 0px 0px;
+    height: 150px;
+    width: 250px;
+    border-radius: 20px 20px 20px 20px;
     transition: 0.3s;
 }
 
@@ -250,7 +257,7 @@ header{
     font-size: 1.3rem;
     font-family: Arial;
     color: #345e82;
-    border-radius: 0px 0px 20px 20px;
+    border-radius: 20px 20px 20px 20px;
 }
 
 
@@ -312,7 +319,7 @@ header{
 
 /* Responsive */
 
-@media(max-width: 992px){
+@media(max-width: 1300px){
     .navbar .links,
     .navbar .action-btn{
         display: none;
@@ -325,11 +332,8 @@ header{
     .dropdown-menu{
         display: block;
     }
-}
 
-@media(max-width: 576px){
-    .dropdown-menu{
-        left: 2rem;
-        width: unset;
+    .navbar .searchBox{
+        display: none;
     }
 }

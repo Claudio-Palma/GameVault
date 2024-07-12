@@ -42,18 +42,6 @@ header{
     background-color: #090621;
 }
 
-.section1{
-    height: 90vh;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    transition: top 0.2s ease-in-out;
-}
-
 .header-content{
     margin-bottom: 150px;
     color: whitesmoke;
@@ -93,6 +81,7 @@ header{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 30px;
 }
 
 .navbar .logo a{
@@ -103,6 +92,7 @@ header{
 .navbar .links{
     display: flex;
     gap: 2rem;
+    width: 200px;
 }
 
 .navbar .toggle-btn{
@@ -151,7 +141,7 @@ header{
 }
 
 .dropdown-menu.open{
-    height: 240px;
+    height: 300px;
 }
 
 .dropdown-menu li{
@@ -579,7 +569,7 @@ button {
 
 /* RESPONSIVE */
 
-@media(max-width: 991px){
+@media(max-width: 1150px){
     .navbar .links,
     .navbar .action-btn{
         display: none;
@@ -776,4 +766,11 @@ button {
     .ctnSeconda{
         margin-left: 80%;
     }
+}
+
+@media (max-width: 991px) {    
+    .links li{
+        width: 100px;
+    }
+
 }
