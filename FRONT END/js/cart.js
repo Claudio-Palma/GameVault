@@ -1,58 +1,54 @@
+document.addEventListener("DOMContentLoaded", function () {
+    const taxRate = 0.1; // Example tax rate of 10%
+    const cartRows = document.querySelectorAll('.cart-row');
+    const subTotalElement = document.getElementById('sub-total');
+    const taxAmountElement = document.getElementById('tax-amount');
+    const totalPriceElement = document.getElementById('total-price');
 
-function upadateCaseNumber(product, price, isIncreasing){
-    const caseInput = document.getElementById(product + '-number');
-    let caseNumber = caseInput.value;
-            if(isIncreasing){
-                caseNumber = parseInt(caseNumber) + 1;
+    function updateTotals() {
+        let subTotal = 0;
+        cartRows.forEach(row => {
+            const priceElement = row.querySelector('.game-price');
+            const quantityElement = row.querySelector('.game-number');
+            const price = parseFloat(priceElement.textContent) || 0;
+            const quantity = parseInt(quantityElement.value) || 0;
+            subTotal += price * quantity;
+        });
+
+        const taxAmount = subTotal * taxRate;
+        const totalPrice = subTotal + taxAmount;
+
+        subTotalElement.textContent = "€" + subTotal.toFixed(2);
+        taxAmountElement.textContent = "€" + taxAmount.toFixed(2);
+        totalPriceElement.textContent = "€" + totalPrice.toFixed(2);
+
+        console.log(`SubTotal: ${subTotal}, Tax: ${taxAmount}, Total: ${totalPrice}`); // Log di debug
+    }
+
+    cartRows.forEach(row => {
+        const minusButton = row.querySelector('.game-minus');
+        const plusButton = row.querySelector('.game-plus');
+        const quantityElement = row.querySelector('.game-number');
+
+        minusButton.addEventListener('click', () => {
+            if (quantityElement.value > 0) {
+                quantityElement.value--;
+                updateTotals();
             }
-            
-    else if(caseNumber > 0){
-        caseNumber = parseInt(caseNumber) - 1;
-    }
-        
-    caseInput.value = caseNumber;
-        const caseTotal = document.getElementById(product + '-total');
-        caseTotal.innerText = caseNumber * price;
-        calculateTotal();
-    }
+        });
 
+        plusButton.addEventListener('click', () => {
+            quantityElement.value++;
+            updateTotals();
+        });
 
-    function getInputvalue(product){
-        const productInput = document.getElementById(product + '-number');
-        const productNumber = parseInt(productInput.value);
-        return productNumber;
-    }
-    function calculateTotal(){
-        const phoneTotal = getInputvalue('game') * 1219;
-        const caseTotal = getInputvalue('game2') * 59;
-        const subTotal = phoneTotal + caseTotal;
-        const tax = subTotal / 10;
-        const totalPrice = subTotal + tax;
+        quantityElement.addEventListener('change', () => {
+            if (quantityElement.value < 0) {
+                quantityElement.value = 0;
+            }
+            updateTotals();
+        });
+    });
 
-        document.getElementById('sub-total').innerText = subTotal;
-        document.getElementById('tax-amount').innerText = tax;
-        document.getElementById('total-price').innerText = totalPrice;
-
-    }
-
-
-
-
-
-document.getElementById('game2-plus').addEventListener('click',function(){
-    upadateCaseNumber('game2', 59 ,true);
-});
-
-document.getElementById('game2-minus').addEventListener('click',function(){
-    upadateCaseNumber('game2', 59, false);
-});
-
-// phone prcie update using add event linstner 
-document.getElementById('game-plus').addEventListener('click',function(){
-    upadateCaseNumber('game',1219, true);
-});
-
-
-document.getElementById('game-minus').addEventListener('click',function(){
-    upadateCaseNumber('game',1219 , false);
+    updateTotals(); // Initial calculation
 });
