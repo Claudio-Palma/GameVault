@@ -10,7 +10,7 @@
     </head>
 
     <body>
-    <header>
+        <header>
             <div class="navbar">
                 <div class="logo" style="margin-right: 20px;"> <a href="#">Game Vault</a> </div>
                 <ul class="links">
@@ -67,6 +67,7 @@
             </form>
         </header>
 
+        <div class="container">
         <?php
             session_start();
             $servername = "localhost:3306";  // Nome del server MySQL
@@ -79,59 +80,26 @@
             if ($conn->connect_error) {
                 die("Connessione al database fallita: " . $conn->connect_error);
             }
-            if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                $ricerca = isset($_POST['ricerca']) ? $_POST['ricerca'] : '';
-                $categoria = isset($_POST['categoria']) ? $_POST['categoria'] : '';
-                $piattaforma = isset($_POST['piattaforma']) ? $_POST['piattaforma'] : '';
-                $Order_prezzo= isset($_POST['Order_prezzo']) ? $_POST['Order_prezzo'] : '';
+            $sql = "SELECT * FROM game";
+            $result = $conn->query($sql);
+            if($result->num_rows>0){
+                while ($row = $result->fetch_assoc()) {
+                    $image=$row["foto"];
+                    $piattaforma=$row["piattaforma"];
+                    $prezzo=$row["prezzo"];
+                    $sconto=$row["sconto"];
+                    $nome=$row["nome"];
+                    $sconto_calc=($prezzo*$sconto)/100;
+                    $prezzoscontato=$prezzo-$sconto_calc;
+                    $prezzoscontato=number_format($prezzoscontato, 2, '.', '');
+                    echo "
 
-                if (!empty($ricerca)) {
-                    $ricerca = $conn->real_escape_string($ricerca);
-                    $sql = "SELECT * FROM game WHERE nome LIKE '%$ricerca%'";
-                } else if (!empty($categoria)) {
-                    $categoria = $conn->real_escape_string($categoria);
-                    $sql = "SELECT * FROM game WHERE genere='$categoria'";
-                } else if (!empty($piattaforma)) {
-                    $piattaforma = $conn->real_escape_string($piattaforma);
-                    $sql = "SELECT * FROM game WHERE piattaforma='$piattaforma'";
-                }
-                else if(!empty($categoria)&&!empty($piattaforma))
-                {
-                    $categoria = $conn->real_escape_string($categoria);
-                    $piattaforma = $conn->real_escape_string($piattaforma);
-                    $sql = "SELECT * FROM game WHERE genere='$categoria' AND piattaforma='$piattaforma'";
-                }
-                else if($Order_prezzo==="prezzo")
-                {
-                    $Order_prezzo=$conn->real_escape_string($Order_prezzo);
-                    $sql= "SELECT * FROM game ORDER BY prezzo ASC";
-                } 
-                else if($Order_prezzo==="nome")
-                {
-                    $Order_prezzo=$conn->real_escape_string($Order_prezzo);
-                    $sql= "SELECT * FROM game ORDER BY nome ASC";  
-                }
-                else {
-                   header("Location: catalogo.php");
-                }
-
-                $result = $conn->query($sql);
-                if ($result->num_rows > 0) {
-                    while ($row = $result->fetch_assoc()) {
-                        $image = $row["foto"];
-                        $nome=$row["nome"];
-                        $prezzo = $row["prezzo"];
-                        $sconto = $row["sconto"];
-                        $sconto_calc = ($prezzo * $sconto) / 100;
-                        $prezzoscontato = $prezzo - $sconto_calc;
-                        $prezzoscontato=number_format($prezzoscontato, 2, '.', '');
-                        echo "
-                       <div id='card'>
+                    <div id='card'>
                         <div id='content'>
-                        <img src='data:image/jpeg;base64,".base64_encode($image)."'>
-                             <h2 style='text-align: center;'> " .$nome. " </h2> 
-                             <br>
-                            <p style='text-align: center;  text-decoration: line-through'> ".$prezzo." €</p> 
+                            <img src='data:image/jpeg;base64,".base64_encode($image)."'>
+                                <h2 style='text-align: center;'> " .$nome. " </h2> 
+                                <br>
+                            <p style='text-align: center;  text-decoration: line-through'> " .$prezzo. " €</p> 
                             <br>
                             <p style='text-align: center'>" .$prezzoscontato ."€</p>
                             <div id='price'>
@@ -146,15 +114,11 @@
                             </div>
                         </div>
                     </div>
-                        ";
-                    }
-                } else {
-                    echo "<h1 style='color: white;'>No results found</h1>";
+                    " ;
                 }
             }
             $conn->close();
-        ?> 
-
-       
+        ?>
+        </div>
     </body>
 </html>
