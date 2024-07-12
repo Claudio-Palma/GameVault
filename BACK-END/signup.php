@@ -1,4 +1,5 @@
 <?php
+session_start();
  $servername = "localhost:3306";  // Nome del server MySQL
  $username = "root";     // Nome utente MySQL
  $password = "";     // Password MySQL
@@ -16,13 +17,10 @@
  {
     $u_username=$_POST["username"];
     $u_email=$_POST["e-mail"];
-    $u_password1=$_POST["pswd1"];
-    $u_password2=$_POST["pswd2"];
+    $u_password1=$_POST["pswd"];
 
-    if(!empty($u_username)&&!empty($u_email)&&!empty($u_password1)&&!empty($u_password2))
+    if(!empty($u_username)&&!empty($u_email)&&!empty($u_password1))
     {
-        if($u_password1==$u_password2)
-        {
             $verifica="SELECT * FROM utente WHERE email='$u_email'";
             $risultato=$conn->query($verifica);
             if($risultato->num_rows > 0)
@@ -32,22 +30,18 @@
             }
             else
             {
-                $hash_password=password_hash($u_password, PASSWORD_DEFAULT);
+                $hash_password=md5($u_password1);
                 $IDRandom=rand(1,100000);
+                $_SESSION['userId']=$IDRandom;
                 $inserimento="INSERT INTO utente(IdUtente, NickName, email, pass) VALUES ('$IDRandom','$u_username','$u_email','$hash_password')";
                 if ($conn->query($inserimento) === TRUE) {
                     echo "Registrazione completata con successo!";
-                    header("Location: ../html/home.html");
+                    header("Location: ../html/Home.php");
                 } else {
                     echo "Errore durante la registrazione: " . $conn->error;
                 }   
             }
-        }
-        else
-        {
-            echo "Le password non sono uguali";
-            header("Location: ../html/login.html");
-        }
+        
     }
     else
     {

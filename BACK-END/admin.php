@@ -1,9 +1,10 @@
 <?php
-    $servername="localhost:3306";
-    $username="admin";
-    $password="admin";
-    $database="gamevault";
-
+    $servername = "localhost:3306";  // Nome del server MySQL
+    $username = "root";     // Nome utente MySQL
+    $password = "";     // Password MySQL
+    $database = "gamevault";     // Nome del database
+    
+    // Creazione della connessione
     $conn = new mysqli($servername, $username, $password, $database);
     if ($conn->connect_error) 
     {
@@ -13,17 +14,18 @@
     {
         if(isset($_POST['inserimento']))
         {
-            //variabili del prodotto
             $nome=$_POST["nome"];
             $prezzo=$_POST["prezzo"];
             $sconto=$_POST["sconto"];
             $descrizione=$_POST["descrizione"];
+            $piattaforma=$_POST["piattaforma"];
+            $genere=$_POST["genere"];
             $quantità=$_POST["quantità"];
 
             if(!empty($nome)&&!empty($prezzo)&&!empty($sconto)&&!empty($descrizione)&&!empty($quantità))
             {
                 $IDRandom=rand(1,100000);
-                $inserimento="INSERT INTO game(IdGame, nome, descrizione, prezzo, disponibilita, foto, recensione, sconto) VALUES('$IDRandom', '$nome', '$descrizione', '$prezzo', '$quantità', '', '', '$sconto')";
+                $inserimento="INSERT INTO game(IdGame, nome, descrizione, piattaforma, genere, prezzo, disponibilita, foto, recensione, sconto) VALUES('$IDRandom', '$nome', '$descrizione', '$piattaforma','$genere','$prezzo', '$quantità', '', '', '$sconto')";
                 if ($conn->query($inserimento) === TRUE) 
                 {
                     echo "Gioco caricato con successo!";
